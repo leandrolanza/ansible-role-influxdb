@@ -27,4 +27,4 @@ BSD
 Author Information
 ------------------
 
-[Leandro Lanza:](https://github.com/leandrolanza/ansible-role-influxdb)
+[Leandro Lanza:](https://github.com/leandrolanza)
