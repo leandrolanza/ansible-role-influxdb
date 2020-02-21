@@ -1,0 +1,14 @@
+---
+- name: Influxdb service
+  systemd:
+    name: influxdb
+    state: "{{ influxdb_service_state }}"
+    enabled: "{{ influxdb_service_enabled }}"
+    daemon_reload: yes
+
+- firewalld:
+    port: 8086/tcp
+    immediate: yes
+    permanent: yes
+    state: enabled
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'

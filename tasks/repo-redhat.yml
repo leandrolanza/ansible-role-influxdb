@@ -1,0 +1,10 @@
+---
+- name: influxdb repository
+  yum_repository:
+    name: influxdb
+    description: InfluxDB Repository - RHEL \$releasever
+    baseurl: https://repos.influxdata.com/rhel/7/x86_64/stable
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://repos.influxdata.com/influxdb.key
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'

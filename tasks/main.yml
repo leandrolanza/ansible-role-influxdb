@@ -1,0 +1,6 @@
+---
+- include: repo-redhat.yml
+- include: repo-debian.yml
+- include: prepare.yml
+- include: install.yml
+- include: services.yml

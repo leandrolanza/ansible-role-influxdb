@@ -1,0 +1,13 @@
+---
+## General
+influxdb_version: 1.7.10-1
+
+# start on boot
+influxdb_service_enabled: True
+influxdb_service_state: started
+
+# variables
+influxdb_retention: true
+influxdb_monitor_store_enabled: true
+influxdb_bind_address: :8086
+influxdb_log_enabled: true

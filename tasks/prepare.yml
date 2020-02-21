@@ -1,0 +1,23 @@
+---
+- name: install the latest version of epel-release
+  yum:
+    name: epel-release
+    state: latest
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+
+- name: install apt-transport-https and software-properties-common
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "apt-transport-https"
+    - "software-properties-common"
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

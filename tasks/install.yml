@@ -1,0 +1,12 @@
+---
+- name: influxdb install redhat
+  yum:
+    name: influxdb-{{ influxdb_version }}
+    state: present
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: influxdb install debian
+  apt:
+    name: influxdb={{ influxdb_version }}
+    state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
